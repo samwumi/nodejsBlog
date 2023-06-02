@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header', { title: 'Post title' }) %>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/myposts.css" />
+    <script src="/scripts/subscribe.js"></script>
+    <link rel="stylesheet" href="/styles/form.css"> 
+    <!-- <link rel="stylesheet" href="/form.css" /> -->
+  </head>
+
+
+ 
+<div class="welcome-text">
+  <h1>Welcome to Glory's Blog</h1>
+  <p>News, Events, Entertainment, Lifestyle, Fashion, Beauty, Inspiration and yes... Gossip! *Wink*</p>
+  </div>
+      <h2 class="post-head">Posts</h2> 
+      <ul id="product-grid">
+      <% posts.forEach((post) => { %>
+        <li>
+          <article class="post-item">
+              <div class="blog-post">
+              <h1 class="blog-post_title"><%=post.title%> </h1>
+              <div class="blog-post_img">
+                <img src="<%=post.imageUrl%>" class="img" alt="post image">
+                <p class="blog-post_text">
+           <%= post.content.substring(0, 100) + " ..."%>
+           </p>
+           <p> <a href="/posts/<%=post.id%>" class="blog-post_cta">Read More</a> </p>
+           
+              </div>  
+              <div class="blog-post_info">
+              <div class="blog-post_date">
+              <span>name</span>
+              <span>date</span>
+              </div>
+           </div>
+           </div>
+       
+           </div>
+          </article>
+        </li>
+        <% }) %>
+      </ul> 
+
+
+
+    
+  
+   <form action=""  method="POST" id="subscribe">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="firstname" class="form-label">Firstname</label>
+      <input type="firstname" class="form-control" id="firstname">
+    </div>
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+  </form> 
+
+
+
+
+<%- include('partials/footer.ejs') %>

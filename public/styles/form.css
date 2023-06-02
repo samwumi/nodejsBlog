@@ -1,0 +1,86 @@
+.form{
+    text-align: center;
+}
+
+.form-style{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 0 ;
+}
+
+.login-form input{
+     width: 350px !important;
+}
+
+
+.login-form button{
+    margin-top: 10px;
+    padding: 5px 20px;
+}
+
+#image-preview{
+    display: none;
+    height: 30rem;
+    width: 35rem;
+    object-fit: cover;
+
+}
+
+#subscribe{
+    text-align: center;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        margin-bottom: 0;
+        margin-top: 0 ;
+        border-radius: 4px;
+        display: none;
+        position:fixed;
+        top: 30%;
+        right: 10%;
+
+}
+#subscribe div input{
+    width: 350px !important;
+} 
+
+
+form {
+    max-width: 25rem !important;
+    margin: 2rem auto !important;
+  }
+  
+  form h1 {
+    text-align: center;
+  }
+  
+  form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+ form input, textarea, select {
+    font: inherit;
+    padding: 0.5rem !important;
+    border-radius: 4px !important;
+    border: 1px solid rgb(204, 204, 204);
+  }
+  
+  input:focus,
+  textarea:focus {
+    background-color: rgb(237, 228, 255);
+  }
+  
+  input, textarea {
+    width: 100% !important;
+  }
+  
+  .form-control {
+    margin: 0.5rem 0;
+  }
+  

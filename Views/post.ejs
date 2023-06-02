@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/header.ejs') %>
+  <link rel="stylesheet" href="/styles/readmore.css">
+  <link rel="stylesheet" href="/styles/myposts.css"/>
+</head>
+<body>
+  <section>
+    <img src="<%= post.imageUrl %>" class="img" alt="post-image">
+    <h1 class="title-head"><%= post.title %></h1>
+    <p class="content-para"><%= post.content %></p>
+  </section>
+
+  <section id="comments">
+    <% if (!comments) { %>
+      <p>This post might have comments. You can load them if you want to view them.</p>
+      <form action="/posts/<%= post._id %>/comments" method="GET">
+        <button class="btn btn-alt">Load Comments</button>
+      </form>
+    <% } else if (comments.length === 0) { %>
+      <p>No comments found.</p>
+    <% } else { %>
+      <p class="no-of-comments">Comments (<%= comments.length %>)</p>
+      <ol>
+        <% for (const comment of comments) { %>
+          <li>
+            <%- include('partials/comment-item', { post: post, comment: comment }) %>
+          </li>
+        <% } %>
+      </ol>
+    <% } %>
+  </section>
+
+  <form action="/posts/<%= post.postId %>/comments" method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">Comment title</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div class="mb-3">
+      <label for="text" class="form-label">Your comment</label>
+      <textarea class="form-control" id="text" rows="3" name="text"></textarea>
+    </div>
+    <button type="submit">Save Comment</button>
+  </form>
+
+  <%- include('partials/footer.ejs') %>
+</body>
+</html>

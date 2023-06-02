@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header.ejs') %>
+    <link rel="stylesheet" href="/readmore.css">
+    <link rel="stylesheet" href="form.css">
+  </head>
+
+<body class="form">
+<form action="/register"  method="POST" class="login-form">
+  <div class="form-style">
+    <div class="mb-3">
+      <label for="name" class="form-label">Email</label>
+      <input type="email" class="form-control" id="form-name" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  </body>
